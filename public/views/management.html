@@ -1,0 +1,50 @@
+<h1>Management</h1>
+<p class="box-error" ng-show="update">
+    {{ 'new_version' | translate }} <a href="{{update}}">{{ 'learn_more' | translate }}</a>.
+</p>
+<p class="box-info" ng-hide="update">
+    {{ 'last_version' | translate }}
+</p>
+<input ng-model="search" type="text" placeholder="{{ 'search' | translate }}" class="search">
+<h2>{{ 'users' | translate }}</h2>
+<input ng-click="createUser()" type="submit" value="{{ 'add_user' | translate }}" class="margin-bottom">
+<table>
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>{{ 'email' | translate }}</th>
+            <th>{{ 'actions' | translate }}</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr ng-repeat="user in users | filter:search | orderBy:id">
+            <td>{{user.id}}</td>
+            <td>{{user.email}}</td>
+            <td>
+                <span class="fa fa-trash" ng-click="deleteUser(user)"></span>
+                <span class="fa fa-pencil" ng-click="updateUser(user)"></span>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<h2>{{ 'registrants' | translate }}</h2>
+<table ng-show="registrants.length">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>{{ 'email' | translate }}</th>
+            <th>{{ 'actions' | translate }}</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr ng-repeat="registrant in registrants | filter:search | orderBy:id">
+            <td>{{registrant.id}}</td>
+            <td>{{registrant.email}}</td>
+            <td>
+                <span class="fa fa-trash" ng-click="deleteRegistrant(registrant)"></span>
+                <span class="fa fa-user-plus" ng-click="addUser(registrant)"></span>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<p ng-hide="registrants.length">{{ 'no_registrant' | translate }}</p>

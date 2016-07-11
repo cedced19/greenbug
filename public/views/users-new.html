@@ -1,0 +1,14 @@
+<h2>{{ 'new_user' | translate }}:</h2>
+<form name="formCreate">
+    <div>
+        <label for="email">{{ 'email' | translate }}:</label>
+        <input id="email" name="email" ng-model="email" type="email" placeholder="{{ 'email' | translate }}" required>
+    </div>
+    <div>
+        <label for="password">{{ 'password' | translate }}:</label>
+        <input id="password" name="password" ng-model="password" type="password" placeholder="{{ 'password' | translate }}" pattern=".{6,}" required>
+    </div>
+    <div>
+        <button ng-disabled="formUpdate.$invalid" ng-click="createUser()">{{ 'add_user' | translate }}</button>
+    </div>
+</form>

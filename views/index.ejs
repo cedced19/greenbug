@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>Greenbug</title>
+    <link href="/favicon.ico" rel="shortcut icon" type="image/x-icon">
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="/stylesheets/styles.css">
+    <meta name="theme-color" content="#A1006B">
+    <meta name="msapplication-navbutton-color" content="#A1006B">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="manifest" href="/manifest.json">
+  </head>
+  <body ng-app="SOT">
+    <header>
+      <h1 class="title">Greenbug</h1>
+    </header>
+    <div class="outer-menu" ng-show="user">
+    	<input class="checkbox-toggle" type="checkbox" id="checkbox-toggle" />
+    	<div class="hamburger">
+    		<div>
+    		</div>
+    	</div>
+    	<div class="menu">
+    		<div>
+    			<div>
+    				<ul>
+    					<li><a href="#/bugs">{{ 'bugs' | translate }}</a></li>
+    					<li><a href="#/management/" ng-show="user.admin">{{ 'management' | translate }}</a></li>
+              <li><a href="#/languages/">{{ 'languages' | translate }}</a></li>
+              <li><a href="#/users/me">{{ 'my_account' | translate }}</a></li>
+              <li><a ng-click="$logout()">{{ 'logout' | translate }}</a></li>
+    				</ul>
+    			</div>
+    		</div>
+    	</div>
+    </div>
+    <div class="ng-view content-wrap"></div>
+    <script type="text/javascript" src="/javascripts/scripts.js"></script>
+  </body>
+</html>

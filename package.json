@@ -1,0 +1,94 @@
+{
+  "name": "greenbug",
+  "version": "0.0.0",
+  "description": "A web application to store the office file templates.",
+  "keywords": [
+    "cli",
+    "web",
+    "store",
+    "projects",
+    "app",
+    "bugs",
+    "user",
+    "client",
+    "users",
+    "freelance"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/cedced19/greenbug"
+  },
+  "bugs": {
+    "url": "https://github.com/cedced19/greenbug/issues"
+  },
+  "homepage": "https://github.com/cedced19/greenbug",
+  "scripts": {
+    "start": "node ./bin/greenbug",
+    "dev": "node ./build/dev",
+    "prod": "node ./build/prod",
+    "test": "mocha --recursive --ui tdd --timeout 50000"
+  },
+  "bin": {
+    "greenbug": "bin/greenbug"
+  },
+  "dependencies": {
+    "angular": "^1.4.5",
+    "angular-local-storage": "^0.2.7",
+    "angular-route": "^1.4.5",
+    "angular-sanitize": "^1.4.5",
+    "angular-translate": "^2.11.0",
+    "angular-translate-loader-static-files": "^2.11.0",
+    "angular-translate-loader-url": "^2.11.0",
+    "body-parser": "~1.15.2",
+    "browserify": "^13.0.0",
+    "check-update": "0.0.8",
+    "clean-css": "^3.4.18",
+    "compression": "^1.5.2",
+    "connect-flash": "^0.1.1",
+    "cookie-parser": "~1.4.3",
+    "debug": "^2.2.0",
+    "ejs": "~2.4.2",
+    "exists-file": "^2.0.0",
+    "express": "~4.14.0",
+    "express-session": "^1.11.3",
+    "helmet": "^2.1.1",
+    "machinepack-document-preview": "0.0.1",
+    "morgan": "~1.7.0",
+    "multer": "^1.1.0",
+    "ng-file-upload": "^12.0.4",
+    "ng-notie": "0.0.1",
+    "passport": "^0.3.0",
+    "passport-local": "^1.0.0",
+    "password-hash-and-salt": "^0.1.3",
+    "pngjs": "^2.2.0",
+    "promise": "^7.1.1",
+    "randomstring": "^1.1.5",
+    "sails-disk": "^0.10.8",
+    "semver": "^5.1.0",
+    "serve-favicon": "~2.3.0",
+    "session-file-store": "0.2.0",
+    "uglifyify": "^3.0.1",
+    "waterline": "^0.12.2"
+  },
+  "author": {
+    "name": "Cédric",
+    "email": "cedced19@gmail.com",
+    "url": "https://github.com/cedced19"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "http://cedced19.github.io/license/"
+    }
+  ],
+  "devDependencies": {
+    "angular-translate": "^2.11.0",
+    "assert": "^1.3.0",
+    "browser-sync": "^2.11.2",
+    "chai": "^3.4.1",
+    "mocha": "^2.3.4",
+    "sails-memory": "^0.10.5",
+    "supertest": "^1.1.0",
+    "watchify": "^3.7.0"
+  }
+}
