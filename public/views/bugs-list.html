@@ -1,0 +1,21 @@
+<h1>{{ 'bugs' | translate }}</h1>
+<input ng-model="search" type="text" placeholder="{{ 'search' | translate }}" class="search">
+<div ng-repeat="project in projects">
+  <h3>{{ project.title }}</h3>
+  <table>
+      <thead>
+          <tr>
+              <th>{{ 'file' | translate }}</th>
+              <th>{{ 'description' | translate }}</th>
+              <th>{{ 'sharing_date' | translate }}</th>
+          </tr>
+      </thead>
+      <tbody>
+          <tr ng-repeat="bug in project.bugs | filter:search | orderBy:'updatedAt':true" ng-click="$goPath('/' + project.id + '/' + bug.id)">
+              <td>{{ bug.title }}</td>
+              <td>{{ bug.description }}</td>
+              <td>{{ 'date' | translate:{date:bug.createdAt} }}</td>
+          </tr>
+      </tbody>
+  </table>
+</div>

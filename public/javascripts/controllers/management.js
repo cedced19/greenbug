@@ -1,7 +1,7 @@
 module.exports = ['$scope', '$location', '$http', '$rootScope', 'notie', '$translate', function($scope, $location, $http, $rootScope, notie, $translate) {
-        
+
         if (!$rootScope.user.admin) {
-          return $location.path('/bugs');
+          return $location.path('/admin/bugs');
         }
 
         $http.get('/api/version').success(function (data) {
@@ -43,11 +43,11 @@ module.exports = ['$scope', '$location', '$http', '$rootScope', 'notie', '$trans
             $scope.users = data;
 
             $scope.createUser = function () {
-                $location.path('/users/new');
+                $location.path('/admin/users/new');
             };
 
             $scope.updateUser = function (user) {
-                $location.path('/users/' + user.id);
+                $location.path('/admin/users/' + user.id);
             };
 
             $scope.deleteUser = function (user) {

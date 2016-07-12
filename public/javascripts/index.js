@@ -12,37 +12,40 @@ var app = angular.module('Greenbug', ['ngNotie', 'ngSanitize', 'ngRoute', 'pasca
 app.config(['$routeProvider', '$translateProvider', 'localStorageServiceProvider',  function($routeProvider, $translateProvider, localStorageServiceProvider) {
         // Route configuration
         $routeProvider
-        .when('/management', {
-            templateUrl: '/views/management.html',
-            controller: 'GreenbugManagementCtrl'
-        })
-        .when('/users/new', {
-            templateUrl: '/views/users-new.html',
-            controller: 'GreenbugUsersNewCtrl'
-        })
-        .when('/users/:id', {
-            templateUrl: '/views/users-id.html',
-            controller: 'GreenbugUsersIdCtrl'
-        })
-        .when('/signup', {
-            templateUrl: '/views/signup.html',
-            controller: 'GreenbugSignupCtrl'
-        })
         .when('/', {
-            templateUrl: '/views/login.html',
-            controller: 'GreenbugLoginCtrl'
+            templateUrl: '/views/index.html'
         })
         .when('/languages', {
             templateUrl: '/views/languages.html',
             controller: 'GreenbugLanguagesCtrl'
         })
-        .when('/files/new', {
-            templateUrl: '/views/files-new.html',
-            controller: 'GreenbugFilesNewCtrl'
+        .when('/:project/new', {
+            templateUrl: '/views/bugs-list.html',
+            controller: 'GreenbugBugsNewCtrl'
         })
-        .when('/files/:id', {
-            templateUrl: '/views/files-id.html',
-            controller: 'GreenbugFilesIdCtrl'
+        .when('/admin', {
+            templateUrl: '/views/login.html',
+            controller: 'GreenbugLoginCtrl'
+        })
+        .when('/admin/bugs', {
+            templateUrl: '/views/bugs-list.html',
+            controller: 'GreenbugBugsNewCtrl'
+        })
+        .when('/admin/management', {
+            templateUrl: '/views/management.html',
+            controller: 'GreenbugManagementCtrl'
+        })
+        .when('/admin/users/new', {
+            templateUrl: '/views/users-new.html',
+            controller: 'GreenbugUsersNewCtrl'
+        })
+        .when('/admin/users/:id', {
+            templateUrl: '/views/users-id.html',
+            controller: 'GreenbugUsersIdCtrl'
+        })
+        .when('/admin/signup', {
+            templateUrl: '/views/signup.html',
+            controller: 'GreenbugSignupCtrl'
         })
         .otherwise({
             redirectTo: '/'
@@ -107,15 +110,38 @@ app.run(['$rootScope', '$location', '$http', '$translate', 'notie', 'localStorag
           }
         });
 
+        $rootScope.$languageMenu = {
+          value : $translate.preferredLanguage(),
+          hidden: true,
+          toggle: function () {
+            if (this.hidden) {
+              document.getElementById('languages-menu').style.display = 'block';
+              this.hidden = false;
+            } else {
+              document.getElementById('languages-menu').style.display = 'none';
+              this.hidden = true;
+            }
+          },
+          change: function (lang) {
+            $translate.use(lang);
+            localStorageService.set('lang', lang);
+            this.value = lang;
+            this.toggle();
+          }
+        }
+
         var lang = localStorageService.get('lang');
         if (lang) {
           $translate.use(lang);
+          $rootScope.$languageMenu.value = lang;
         }
 }]);
 
 app.controller('GreenbugManagementCtrl', require('./controllers/management.js'));
 app.controller('GreenbugUsersIdCtrl', require('./controllers/users-id.js'));
 app.controller('GreenbugUsersNewCtrl', require('./controllers/users-new.js'));
+app.controller('GreenbugBugsListCtrl', require('./controllers/bugs-list.js'));
+app.controller('GreenbugBugsNewCtrl', require('./controllers/bugs-new.js'));
 app.controller('GreenbugSignupCtrl', require('./controllers/signup.js'));
 app.controller('GreenbugLoginCtrl', require('./controllers/login.js'));
 app.controller('GreenbugLanguagesCtrl', require('./controllers/languages.js'));

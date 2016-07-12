@@ -3,7 +3,7 @@ module.exports = ['$routeParams', '$scope', '$location', '$http', '$rootScope', 
         if ($routeParams.id === 'me') {
             $scope.email = $rootScope.user.email;
         } else if (!$rootScope.user.admin) {
-            return $location.path('/bugs');
+            return $location.path('/admin/bugs');
         } else if ($rootScope.user.id == $routeParams.id) {
             $scope.email = $rootScope.user.email;
         } else {

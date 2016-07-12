@@ -13,7 +13,7 @@ var Projects = Waterline.Collection.extend({
             type: 'string',
             primaryKey: true,
             defaultsTo: function () {
-                return randomstring(7);
+                return randomstring(11);
             }
         },
         title: {
@@ -25,7 +25,7 @@ var Projects = Waterline.Collection.extend({
             via: 'project'
         }
     }
-    
+
 });
 
 module.exports = Projects;

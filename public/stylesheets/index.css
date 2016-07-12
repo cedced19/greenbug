@@ -73,18 +73,69 @@ textarea {
 	overflow:auto;
 }
 header {
-  background: rgba(27, 163, 156, 0.75);
+  background: rgba(54, 215, 183, 0.75);
   color: #fff;
-  padding:0.25%;
   box-shadow: 0 5px 10px #aaa;
   -webkit-box-shadow: 0 5px 10px #aaa;
   -moz-box-shadow: 0 5px 10px #aaa;
+  height: 66px;
+  line-height: 66px;
+  text-align: center;
 }
 header h1 {
   border-bottom: 0;
-  font-family: arial, helvetica, san-serif;
-  font-size: 1.5em;
-  line-height: 1.1;
+  font-family: arial, helvetica, sans-serif;
+  font-size: 2em;
+  margin: 0 0 0 0;
+  display: inline-block;
+  position: relative;
+}
+header .language {
+  float: right;
+  padding-right: 15px;
+  display: inline-block;
+  font-size: 1.25em;
+  position: relative;
+  overflow: hidden;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+.languages-menu {
+  float: right;
+  position: absolute;
+  border: 0.1px solid #aaa;
+  box-shadow: 0 5px 10px #aaa;
+  -webkit-box-shadow: 0 5px 10px #aaa;
+  -moz-box-shadow: 0 5px 10px #aaa;
+  z-index: 1;
+  width: 18%;
+  margin-right: 15px;
+  padding-top: 5px;
+  background-color: #fff;
+  display: none;
+  right: 0;
+}
+.languages-menu ul {
+  list-style-type: none;
+  margin-bottom: 0;
+  padding-left: 0;
+}
+.languages-menu ul li {
+  padding: 5px;
+  cursor: pointer;
+}
+.languages-menu ul li:hover {
+  background: rgba(54, 215, 183, 0.75);
+  color: #fff;
+}
+.languages-menu span {
+  padding-left: 5px;
+  font-weight: 600;
+}
+@media screen and (max-width:600px) {
+  .languages-menu {
+    width: 40%;
+  }
 }
 [hidden] {
 	display: none;
@@ -638,7 +689,7 @@ h1 {
   width: 60px;
   height: 60px;
   padding: .5em 1em;
-  background: rgba(161, 0, 107, 0.75);
+  background: rgba(54, 215, 183, 0.75);
   border-radius: 0 0.12em 0.12em 0;
   cursor: pointer;
   -webkit-transition: box-shadow 0.4s ease;
@@ -727,7 +778,7 @@ h1 {
   width: 200vw;
   height: 200vw;
   color: #FEFEFE;
-  background: rgba(186, 2, 92, 0.97);
+  background: rgba(27, 163, 156, 0.97);
   border-radius: 50%;
   -webkit-transition: all 0.4s ease;
   transition: all 0.4s ease;

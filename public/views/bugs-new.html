@@ -1,5 +1,5 @@
-<h1>{{ 'add_file' | translate }}</h1>
-<form name="formCreate">
+<h1>{{ 'share_bug' | translate }}</h1>
+<form name="formShare">
     <div class="form-group">
         <label for="title">{{ 'title' | translate }}:</label>
         <input id="title" name="title" type="text" class="form-control" ng-model="title" placeholder="{{ 'title' | translate }}" required>
@@ -9,12 +9,12 @@
         <input id="description" name="description" type="text" class="form-control" ng-model="description" placeholder="{{ 'description' | translate }}" required>
     </div>
     <div class="form-group">
-        <label for="file">{{ 'select_file' | translate }}:</label>
-        <span ngf-select ng-model="file" id="file" name="file" class="fa fa-upload"></span>
-        <span ng-show="file" class="file-selected">{{ 'file_selected' | translate }}</span>
+        <label for="file">{{ 'select_screenshot' | translate }}:</label>
+        <span ngf-select ng-model="screenshot" id="screenshot" name="screenshot" class="fa fa-upload"></span>
+        <span ng-show="screenshot" class="screenshot-selected">{{ 'screenshot_selected' | translate }}</span>
     </div>
     <div class="form-group">
-        <button ng-disabled="formCreate.$invalid || uploading" ng-click="createFile()">{{ 'add_file' | translate }}</button>
+        <button ng-disabled="formShare.$invalid || uploading" ng-click="shareBug()">{{ 'share_bug' | translate }}</button>
     </div>
 
 </form>

@@ -1,7 +1,7 @@
 module.exports = ['$scope', '$location', '$http', '$rootScope', 'notie', '$translate', function($scope, $location, $http, $rootScope, notie, $translate) {
 
         if (!$rootScope.user.admin) {
-          return $location.path('/bugs');
+          return $location.path('/admin/bugs');
         }
 
         $scope.createUser = function() {
@@ -12,7 +12,7 @@ module.exports = ['$scope', '$location', '$http', '$rootScope', 'notie', '$trans
                 $translate('user_saved').then(function (message) {
                   notie.alert(1, message, 3);
                 });
-                $location.path('/management/');
+                $location.path('/admin/management/');
             }).error($rootScope.$error);
         };
 }];

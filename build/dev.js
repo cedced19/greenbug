@@ -19,27 +19,18 @@ var bundleJs = function () {
 
 var dev = function () {
   bs.init({
-      proxy: 'http://localhost:' + (process.env.PORT || '8881')
+      proxy: 'http://localhost:' + (process.env.PORT || '8881'),
+      middleware: [
+          {
+              route: '/stylesheets/styles.css',
+              handle: function (req, res, next) {
+                 fs.createReadStream(path('../public/stylesheets/index.css')).pipe(res);
+              }
+          }
+      ]
   });
 
-  bs.watch(path('../public/stylesheets/index.css')).on('change', function() {
-      bs.notify('Compiling...');
-      var rd = fs.createReadStream(path('../public/stylesheets/index.css'));
-      rd.on('error', function(err) {
-        bs.notify('Error when reading index.css');
-        console.error(err);
-      });
-      var wr = fs.createWriteStream(path('../public/stylesheets/styles.css'));
-      wr.on('error', function(err) {
-        bs.notify('Error when writing styles.css');
-        console.error(err);
-      });
-      wr.on("close", function() {
-        bs.reload();
-      });
-      rd.pipe(wr);
-  });
-  
+  bs.watch(path('../public/stylesheets/index.css')).on('change', bs.reload);
   bs.watch(path('../public/views/*.html')).on('change', bs.reload);
   bs.watch(path('../views/*.ejs')).on('change', bs.reload);
 

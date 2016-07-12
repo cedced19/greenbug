@@ -57,5 +57,6 @@
   "language_code": "Language code",
   "disabled": "Disabled",
   "enabled": "Enabled",
-  "bugs": "Bugs"
+  "bugs": "Bugs",
+  "choose_language": "Choose a language"
 }

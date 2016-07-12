@@ -6,16 +6,26 @@
     <link href="/favicon.ico" rel="shortcut icon" type="image/x-icon">
     <meta name="viewport" content="width=device-width">
     <link rel="stylesheet" href="/stylesheets/styles.css">
-    <meta name="theme-color" content="#A1006B">
-    <meta name="msapplication-navbutton-color" content="#A1006B">
+    <meta name="theme-color" content="#36d7b7">
+    <meta name="msapplication-navbutton-color" content="#36d7b7">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <link rel="manifest" href="/manifest.json">
   </head>
-  <body ng-app="SOT">
+  <body ng-app="Greenbug">
     <header>
       <h1 class="title">Greenbug</h1>
+      <div class="language" ng-click="$languageMenu.toggle()">
+        {{ $languageMenu.value }}
+      </div>
     </header>
+    <div class="languages-menu" id="languages-menu">
+      <span>{{ 'choose_language' | translate }}:</span>
+      <ul>
+        <li ng-click="$languageMenu.change('fr')">Français</li>
+        <li ng-click="$languageMenu.change('en')">English</li>
+      </ul>
+    </div>
     <div class="outer-menu" ng-show="user">
     	<input class="checkbox-toggle" type="checkbox" id="checkbox-toggle" />
     	<div class="hamburger">
@@ -26,10 +36,9 @@
     		<div>
     			<div>
     				<ul>
-    					<li><a href="#/bugs">{{ 'bugs' | translate }}</a></li>
-    					<li><a href="#/management/" ng-show="user.admin">{{ 'management' | translate }}</a></li>
-              <li><a href="#/languages/">{{ 'languages' | translate }}</a></li>
-              <li><a href="#/users/me">{{ 'my_account' | translate }}</a></li>
+    					<li><a href="#/admin/bugs">{{ 'bugs' | translate }}</a></li>
+    					<li><a href="#/admin/management/" ng-show="user.admin">{{ 'management' | translate }}</a></li>
+              <li><a href="#/admin/users/me">{{ 'my_account' | translate }}</a></li>
               <li><a ng-click="$logout()">{{ 'logout' | translate }}</a></li>
     				</ul>
     			</div>

@@ -5,8 +5,16 @@ var Bugs = Waterline.Collection.extend({
     identity: 'bugs',
     connection: 'save',
     autoCreatedAt: false,
+    autoPK: false,
 
     attributes: {
+        id: {
+            type: 'string',
+            primaryKey: true,
+            defaultsTo: function () {
+                return randomstring(11);
+            }
+        },
         title: {
             type: 'string',
             required: true
@@ -19,7 +27,7 @@ var Bugs = Waterline.Collection.extend({
             model: 'projects'
         }
     }
-    
+
 });
 
 module.exports = Bugs;
