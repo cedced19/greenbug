@@ -14,28 +14,36 @@ module.exports = ['$scope', '$location', '$http', '$rootScope', 'notie', '$trans
             $scope.registrants = data;
 
             $scope.addUser = function(user) {
-                $http.post('/api/users', {
-                    email: user.email,
-                    password: user.password
-                }).success(function(data) {
-                    delete $scope.registrants[key];
-                    $scope.users.push(user);
-                    $translate('user_added').then(function (translation) {
-                        notie.alert(1, translation, 3);
-                    });
-                    $http.delete('/api/registrants/' + user.id);
-                    $scope.search = '';
-                }).error($rootScope.$error);
+                $scope.registrants.forEach(function (value, key) {
+                   if (value.id == user.id) {
+                       $http.post('/api/users', {
+                            email: value.email,
+                            password: value.password
+                        }).success(function(data) {
+                            delete $scope.registrants[key];
+                            $scope.users.push(value);
+                            $translate('user_added').then(function (translation) {
+                              notie.alert(1, translation, 3);
+                            });
+                            $http.delete('/api/registrants/' + user.id);
+                            $scope.search = '';
+                        }).error($rootScope.$error);
+                   }
+                });
             };
 
             $scope.deleteRegistrant = function (user) {
-                $http.delete('/api/registrants/' + user.id).success(function(data) {
-                    delete $scope.registrants[key];
-                    $translate('registrant_deleted').then(function (translation) {
-                        notie.alert(1, translation, 3);
-                    });
-                    $scope.search = '';
-                }).error($rootScope.$error);
+                $scope.registrants.forEach(function (value, key) {
+                   if (value.id == user.id) {
+                       $http.delete('/api/registrants/' + user.id).success(function(data) {
+                            delete $scope.registrants[key];
+                            $translate('registrant_deleted').then(function (translation) {
+                              notie.alert(1, translation, 3);
+                            });
+                            $scope.search = '';
+                        }).error($rootScope.$error);
+                   }
+                });
             };
         }).error($rootScope.$error);
 

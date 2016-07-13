@@ -114,6 +114,14 @@ header .language {
   background-color: #fff;
   display: none;
   right: 0;
+  -webkit-animation-duration: 0.5s;
+  animation-duration: 0.5s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-animation-name: fadeIn;
+  animation-name: fadeIn;
+  -webkit-animation-timing-function: ease-out;
+  animation-timing-function: ease-out;
 }
 .languages-menu ul {
   list-style-type: none;
@@ -135,6 +143,25 @@ header .language {
 @media screen and (max-width:600px) {
   .languages-menu {
     width: 40%;
+  }
+}
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
   }
 }
 [hidden] {

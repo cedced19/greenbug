@@ -13,14 +13,11 @@ app.config(['$routeProvider', '$translateProvider', 'localStorageServiceProvider
         // Route configuration
         $routeProvider
         .when('/', {
-            templateUrl: '/views/index.html'
-        })
-        .when('/languages', {
-            templateUrl: '/views/languages.html',
-            controller: 'GreenbugLanguagesCtrl'
+            templateUrl: '/views/index.html',
+            controller: 'GreenbugIndexCtrl'
         })
         .when('/:project/new', {
-            templateUrl: '/views/bugs-list.html',
+            templateUrl: '/views/bugs-new.html',
             controller: 'GreenbugBugsNewCtrl'
         })
         .when('/admin', {
@@ -128,7 +125,7 @@ app.run(['$rootScope', '$location', '$http', '$translate', 'notie', 'localStorag
             this.value = lang;
             this.toggle();
           }
-        }
+        };
 
         var lang = localStorageService.get('lang');
         if (lang) {
@@ -137,6 +134,7 @@ app.run(['$rootScope', '$location', '$http', '$translate', 'notie', 'localStorag
         }
 }]);
 
+app.controller('GreenbugIndexCtrl', require('./controllers/index.js'));
 app.controller('GreenbugManagementCtrl', require('./controllers/management.js'));
 app.controller('GreenbugUsersIdCtrl', require('./controllers/users-id.js'));
 app.controller('GreenbugUsersNewCtrl', require('./controllers/users-new.js'));
@@ -144,4 +142,3 @@ app.controller('GreenbugBugsListCtrl', require('./controllers/bugs-list.js'));
 app.controller('GreenbugBugsNewCtrl', require('./controllers/bugs-new.js'));
 app.controller('GreenbugSignupCtrl', require('./controllers/signup.js'));
 app.controller('GreenbugLoginCtrl', require('./controllers/login.js'));
-app.controller('GreenbugLanguagesCtrl', require('./controllers/languages.js'));

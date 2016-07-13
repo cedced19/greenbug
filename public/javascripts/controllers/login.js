@@ -10,6 +10,7 @@ module.exports = ['$scope', '$location', '$http', '$rootScope', '$translate', 'n
                 password: $scope.password
             }).success(function(data) {
                 $rootScope.user = data;
+                $location.path('/admin/bugs');
             }).error(function (data, code) {
               if (code === 401) {
                 $translate('invalid_auth').then(function (translation) {
