@@ -1,3 +1,5 @@
+process.env.NODE_ENV = 'production';
+
 var assert = require('assert');
 var expect = require('chai').expect;
 var Waterline = require('waterline');

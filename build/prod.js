@@ -9,9 +9,9 @@ var prod = function () {
     b.transform({
         global: true,
         sourcemap: false
-    }, 'uglifyify'); 
+    }, 'uglifyify');
     b.bundle().pipe(fs.createWriteStream(path.resolve(__dirname, '../public/javascripts/scripts.js')));
-    
+
     var source = fs.readFileSync(path.resolve(__dirname, '../public/stylesheets/index.css'));
     var minified = new cssmin().minify(source).styles;
     fs.writeFileSync(path.resolve(__dirname, '../public/stylesheets/styles.css'), minified, 'utf8');

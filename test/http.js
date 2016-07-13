@@ -1,7 +1,7 @@
+process.env.NODE_ENV = 'production';
+
 var request = require('supertest');
 var expect = require('chai').expect;
-
-process.env.NODE_ENV = 'production';
 var app = require('../app');
 
 describe('Test fonts files', function () {
@@ -98,9 +98,9 @@ describe('Test views files', function () {
             done();
         });
     });
-    it('responds to /views/languages.html', function (done) {
+    it('responds to /views/bugs-list.html', function (done) {
       request(app)
-        .get('/views/languages.html')
+        .get('/views/bugs-list.html')
         .expect(200)
         .end(function(err, res) {
             if (err) return done(err);
