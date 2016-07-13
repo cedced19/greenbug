@@ -55,5 +55,16 @@
   "disabled": "Désactivé",
   "enabled": "Activé",
   "bugs": "Bugs",
-  "choose_language": "Choisir une langue"
+  "choose_language": "Choisir une langue",
+  "share_bug": "Partager un bug",
+  "select_screenshot": "Choisir une capture d'écran",
+  "screenshot_selected": "Capture d'écran selectionnée",
+  "optional": "optionnel",
+  "report_bug_warning": "Ne confondez pas un bug avec un problème concernant seulement vous. Dans le doute partagez nous votre expérience.",
+  "bug_definition": "Un bug est un disfonctionnement d'un système informatique. Si vous avez observé ou rencontré un bug sur le site \"{{title}}\", vous pouvez le partager avec nous ici.",
+  "share_bug_of": "Partager un bug du site \"{{title}}\"",
+  "understood": "Compris",
+  "sharing_date": "Date de partage",
+  "add_project": "Ajouter un projet",
+  "project_doesnt_exist": "Le projet n'existe pas"
 }

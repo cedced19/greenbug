@@ -6,6 +6,10 @@ The goal is to provide a link to this web appliction which drives the user to th
 When the user is on this website, he can report the bug he has seen.   
 Now the developer can have a feedback from the users and improve his application.  
 
+
+__When those features will be developed__, some monitoring of your servers will be added.
+It will required a small software on your servers to send informations to Greenbug.
+
 [![Build Status](https://travis-ci.org/cedced19/greenbug.svg)](https://travis-ci.org/cedced19/greenbug)
 [![NPM version](https://badge.fury.io/js/greenbug.svg)](http://badge.fury.io/js/greenbug)
 

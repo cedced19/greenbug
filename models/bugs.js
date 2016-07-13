@@ -15,10 +15,6 @@ var Bugs = Waterline.Collection.extend({
                 return randomstring(11);
             }
         },
-        title: {
-            type: 'string',
-            required: true
-        },
         description: {
             type: 'string',
             required: true

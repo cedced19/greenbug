@@ -3,8 +3,4 @@ module.exports = ['$scope', '$location', '$http', '$rootScope', function($scope,
         if (!$rootScope.user) {
           return $location.path('/admin');
         }
-
-        $http.get('/api/projects').success(function (data) {
-                $scope.projects = data;
-        });
 }];

@@ -1,0 +1,14 @@
+<h1>{{ 'add_project' | translate }}</h1>
+<form name="formCreate">
+    <div class="form-group">
+        <label for="description">{{ 'title' | translate }}:</label>
+        <input id="description" name="title" type="text" class="form-control" ng-model="title" placeholder="{{ 'title' | translate }}" required>
+    </div>
+    <div class="form-group">
+        <label for="description">{{ 'description' | translate }}:</label>
+        <input id="description" name="description" type="text" class="form-control" ng-model="description" placeholder="{{ 'description' | translate }}" required>
+    </div>
+    <div class="form-group">
+        <button ng-disabled="formCreate.$invalid" ng-click="addProject()">{{ 'add_project' | translate }}</button>
+    </div>
+</form>

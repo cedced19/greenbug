@@ -1,20 +1,16 @@
 <h1>{{ 'share_bug' | translate }}</h1>
 <form name="formShare">
     <div class="form-group">
-        <label for="title">{{ 'title' | translate }}:</label>
-        <input id="title" name="title" type="text" class="form-control" ng-model="title" placeholder="{{ 'title' | translate }}" required>
-    </div>
-    <div class="form-group">
         <label for="description">{{ 'description' | translate }}:</label>
         <input id="description" name="description" type="text" class="form-control" ng-model="description" placeholder="{{ 'description' | translate }}" required>
     </div>
     <div class="form-group">
-        <label for="file">{{ 'select_screenshot' | translate }}:</label>
+        <label for="file">{{ 'select_screenshot' | translate }} ({{ 'optional' | translate }}):</label>
         <span ngf-select ng-model="screenshot" id="screenshot" name="screenshot" class="fa fa-upload"></span>
         <span ng-show="screenshot" class="screenshot-selected">{{ 'screenshot_selected' | translate }}</span>
     </div>
     <div class="form-group">
-        <button ng-disabled="formShare.$invalid || uploading" ng-click="shareBug()">{{ 'share_bug' | translate }}</button>
+        <button ng-disabled="formShare.$invalid" ng-click="shareBug()">{{ 'share_bug' | translate }}</button>
     </div>
 
 </form>

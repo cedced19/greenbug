@@ -60,7 +60,7 @@ app.use('/', index);
 app.use('/api/users', users);
 app.use('/api/registrants', registrants);
 app.use('/api/bugs', bugs);
-app.use('/api/projects', users);
+app.use('/api/projects', projects);
 app.use('/api/version', version);
 
 // authentication

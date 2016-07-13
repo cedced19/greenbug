@@ -2,16 +2,16 @@ var express = require('express');
 var router = express.Router();
 var auth = require('../policies/auth.js');
 
-/* GET Bugss */
-router.get('/', function(req, res, next) {
+/* GET Bugs */
+router.get('/', auth, function(req, res, next) {
     req.app.models.bugs.find().populate('project').exec(function(err, models) {
         if(err) return next(err);
         res.json(models);
     });
 });
 
-/* POST Bugss: create a bugs */
-router.post('/', auth, function(req, res, next) {
+/* POST Bugs: create a bugs */
+router.post('/', function(req, res, next) {
     req.app.models.bugs.create(req.body, function(err, model) {
         if(err) return next(err);
         res.json(model);
@@ -19,11 +19,11 @@ router.post('/', auth, function(req, res, next) {
 });
 
 /* GET Bugs */
-router.get('/:id', function(req, res, next) {
+router.get('/:id', auth, function(req, res, next) {
     req.app.models.bugs.find({ id: req.params.id }).populate('project').exec(function(err, model) {
-        if(err) return next(err);
+        if (err) return next(err);
         model = model[0];
-        if(model === '' || model === null || model === undefined) return next(err);
+        if (model === '' || model === null || model === undefined) return next(err);
         res.json(model);
     });
 });

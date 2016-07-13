@@ -1,0 +1,8 @@
+<h2>{{ 'share_bug_of' | translate:{title:project.title} }}</h2>
+<p>
+  {{ 'bug_definition' | translate:{title:project.title} }}
+</p>
+<p class="box-warning">
+  {{ 'report_bug_warning' | translate:{title:project.title} }}
+</p>
+<a ng-href="/#/{{project.id}}/new" class="button" translate="understood"></a>

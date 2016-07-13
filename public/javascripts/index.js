@@ -16,17 +16,17 @@ app.config(['$routeProvider', '$translateProvider', 'localStorageServiceProvider
             templateUrl: '/views/index.html',
             controller: 'GreenbugIndexCtrl'
         })
-        .when('/:project/new', {
-            templateUrl: '/views/bugs-new.html',
-            controller: 'GreenbugBugsNewCtrl'
-        })
         .when('/admin', {
             templateUrl: '/views/login.html',
             controller: 'GreenbugLoginCtrl'
         })
+        .when('/admin/projects/new', {
+            templateUrl: '/views/projects-new.html',
+            controller: 'GreenbugProjectsNewCtrl'
+        })
         .when('/admin/bugs', {
             templateUrl: '/views/bugs-list.html',
-            controller: 'GreenbugBugsNewCtrl'
+            controller: 'GreenbugBugsListCtrl'
         })
         .when('/admin/management', {
             templateUrl: '/views/management.html',
@@ -43,6 +43,14 @@ app.config(['$routeProvider', '$translateProvider', 'localStorageServiceProvider
         .when('/admin/signup', {
             templateUrl: '/views/signup.html',
             controller: 'GreenbugSignupCtrl'
+        })
+        .when('/:project', {
+            templateUrl: '/views/projects-homepage.html',
+            controller: 'GreenbugProjectsHomepageCtrl'
+        })
+        .when('/:project/new', {
+            templateUrl: '/views/bugs-new.html',
+            controller: 'GreenbugBugsNewCtrl'
         })
         .otherwise({
             redirectTo: '/'
@@ -140,5 +148,7 @@ app.controller('GreenbugUsersIdCtrl', require('./controllers/users-id.js'));
 app.controller('GreenbugUsersNewCtrl', require('./controllers/users-new.js'));
 app.controller('GreenbugBugsListCtrl', require('./controllers/bugs-list.js'));
 app.controller('GreenbugBugsNewCtrl', require('./controllers/bugs-new.js'));
+app.controller('GreenbugProjectsHomepageCtrl', require('./controllers/projects-homepage.js'));
+app.controller('GreenbugProjectsNewCtrl', require('./controllers/projects-new.js'));
 app.controller('GreenbugSignupCtrl', require('./controllers/signup.js'));
 app.controller('GreenbugLoginCtrl', require('./controllers/login.js'));

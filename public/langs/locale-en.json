@@ -55,5 +55,11 @@
   "disabled": "Disabled",
   "enabled": "Enabled",
   "bugs": "Bugs",
-  "choose_language": "Choose a language"
+  "choose_language": "Choose a language",
+  "share_bug": "Share a bug",
+  "select_screenshot": "Choose a screenshot",
+  "screenshot_selected": "Screenshot selected",
+  "optional": "optional",
+  "add_project": "Add a project",
+  "project_doesnt_exist": "The project doesn't exist"
 }

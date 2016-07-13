@@ -3,8 +3,8 @@ var router = express.Router();
 var auth = require('../policies/auth.js');
 
 /* GET Projects */
-router.get('/', function(req, res, next) {
-    req.app.models.projects.find().populate('projects').exec(function(err, models) {
+router.get('/', auth, function(req, res, next) {
+    req.app.models.projects.find().populate('bugs').exec(function(err, models) {
         if(err) return next(err);
         models.forEach(function (project) {
             project.projects.forEach(function (project) {
@@ -25,10 +25,16 @@ router.post('/', auth, function(req, res, next) {
 
 /* GET Project */
 router.get('/:id', function(req, res, next) {
-    req.app.models.projects.find({ id: req.params.id }).populate('projects').exec(function(err, model) {
+    req.app.models.projects.find({ id: req.params.id }).populate('bugs').exec(function(err, model) {
         if(err) return next(err);
         model = model[0];
         if(model === '' || model === null || model === undefined) return next(err);
+        if (!req.isAuthenticated()) {
+          return res.json({
+            id: model.id,
+            title: model.title
+          });
+        }
         res.json(model);
     });
 });
