@@ -10,7 +10,11 @@
         <span ng-show="screenshot" class="screenshot-selected">{{ 'screenshot_selected' | translate }}</span>
     </div>
     <div class="form-group">
-        <button ng-disabled="formShare.$invalid" ng-click="shareBug()">{{ 'share_bug' | translate }}</button>
+        <label for="email">{{ 'email' | translate }} ({{ 'optional' | translate }}):</label>
+        <input id="email" name="email" type="email" class="form-control" ng-model="email" placeholder="{{ 'email' | translate }}" required>
+    </div>
+    <div class="form-group">
+        <button ng-disabled="formShare.$invalid || uploading" ng-click="shareBug()">{{ 'share_bug' | translate }}</button>
     </div>
 
 </form>

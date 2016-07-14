@@ -16,7 +16,7 @@
       <tbody>
           <tr ng-repeat="bug in project.bugs | filter:search | orderBy:'updatedAt':true" ng-click="$goPath('/' + project.id + '/' + bug.id)">
               <td>{{ bug.description }}</td>
-              <td>{{ 'date' | translate:{date:bug.createdAt} }}</td>
+              <td>{{ 'date' | translate:{date:bug.updatedAt} }}</td>
           </tr>
       </tbody>
   </table>

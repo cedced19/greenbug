@@ -7,8 +7,15 @@ router.get('/', auth, function(req, res, next) {
     req.app.models.projects.find().populate('bugs').exec(function(err, models) {
         if(err) return next(err);
         models.forEach(function (project) {
-            project.bugs.forEach(function (project) {
-               delete project.project;
+            project.bugs.forEach(function (bug) {
+               delete bug.project;
+               if (bug.path) {
+                 delete bug.path;
+                 delete bug.mimetype;
+                 bug.screenshot = true;
+               } else {
+                 bug.screenshot = false
+               }
             });
         });
         res.json(models);
@@ -35,6 +42,16 @@ router.get('/:id', function(req, res, next) {
             title: model.title
           });
         }
+        model.bugs.forEach(function (bug) {
+           delete bug.project;
+           if (bug.path) {
+             delete bug.path;
+             delete bug.mimetype;
+             bug.screenshot = true;
+           } else {
+             bug.screenshot = false;
+           }
+        });
         res.json(model);
     });
 });

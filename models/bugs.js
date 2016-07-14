@@ -21,7 +21,17 @@ var Bugs = Waterline.Collection.extend({
         },
         project: {
             model: 'projects'
-        }
+        },
+        path: {
+            type: 'string'
+        },
+        mimetype: {
+            type: 'string'
+        },
+        email: {
+            type: 'string',
+            email: true
+        },
     }
 
 });

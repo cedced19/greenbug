@@ -62,5 +62,7 @@
   "optional": "optional",
   "add_project": "Add a project",
   "project_doesnt_exist": "The project doesn't exist",
-  "no_bug": "No shared bug"
+  "no_bug": "No shared bug",
+  "not_an_image": "You haven't provided a picture.",
+  "bug_shared": "The bug has been shared."
 }
