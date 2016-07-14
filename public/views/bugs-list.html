@@ -2,7 +2,11 @@
 <input ng-model="search" type="text" placeholder="{{ 'search' | translate }}" class="search">
 <div ng-repeat="project in projects">
   <h3>{{ project.title }}</h3>
-  <table>
+  <p>
+    {{ project.description }}
+  </p>
+  <a ng-href="/#/{{ project.id }}" class="button margin-bottom">{{ 'share_bug' | translate }}</a>
+  <table ng-show="project.bugs.length">
       <thead>
           <tr>
               <th>{{ 'description' | translate }}</th>
@@ -16,4 +20,7 @@
           </tr>
       </tbody>
   </table>
+  <p ng-hide="project.bugs.length">
+    {{ 'no_bug' | translate }}
+  </p>
 </div>

@@ -7,7 +7,7 @@ router.get('/', auth, function(req, res, next) {
     req.app.models.projects.find().populate('bugs').exec(function(err, models) {
         if(err) return next(err);
         models.forEach(function (project) {
-            project.projects.forEach(function (project) {
+            project.bugs.forEach(function (project) {
                delete project.project;
             });
         });

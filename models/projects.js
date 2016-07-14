@@ -13,7 +13,7 @@ var Projects = Waterline.Collection.extend({
             type: 'string',
             primaryKey: true,
             defaultsTo: function () {
-                return randomstring(11);
+                return randomstring.generate(11);
             }
         },
         title: {

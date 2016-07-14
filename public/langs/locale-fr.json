@@ -66,5 +66,6 @@
   "understood": "Compris",
   "sharing_date": "Date de partage",
   "add_project": "Ajouter un projet",
-  "project_doesnt_exist": "Le projet n'existe pas"
+  "project_doesnt_exist": "Le projet n'existe pas",
+  "no_bug": "Aucun bug partagé"
 }

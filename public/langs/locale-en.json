@@ -61,5 +61,6 @@
   "screenshot_selected": "Screenshot selected",
   "optional": "optional",
   "add_project": "Add a project",
-  "project_doesnt_exist": "The project doesn't exist"
+  "project_doesnt_exist": "The project doesn't exist",
+  "no_bug": "No shared bug"
 }
