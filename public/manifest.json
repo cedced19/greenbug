@@ -1,7 +1,7 @@
 {
   "name": "Greenbug",
   "short_name": "Greenbug",
-  "start_url": "/#/admin",
+  "start_url": "/",
   "display": "standalone",
   "icons": [{
     "src": "icons/48.png",
