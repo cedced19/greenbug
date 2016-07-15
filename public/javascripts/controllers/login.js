@@ -1,7 +1,7 @@
 module.exports = ['$scope', '$location', '$http', '$rootScope', '$translate', 'notie', function($scope, $location, $http, $rootScope, $translate, notie) {
 
         if ($rootScope.user) {
-          return $location.path('/admin/bugs');
+          return $location.path('/bugs');
         }
 
         $scope.login = function () {
@@ -10,7 +10,7 @@ module.exports = ['$scope', '$location', '$http', '$rootScope', '$translate', 'n
                 password: $scope.password
             }).success(function(data) {
                 $rootScope.user = data;
-                $location.path('/admin/bugs');
+                $location.path('/bugs');
             }).error(function (data, code) {
               if (code === 401) {
                 $translate('invalid_auth').then(function (translation) {

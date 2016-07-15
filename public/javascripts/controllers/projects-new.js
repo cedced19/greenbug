@@ -1,7 +1,7 @@
 module.exports = ['$scope', '$location', '$http', '$rootScope', '$translate', 'notie', function($scope, $location, $http, $rootScope, $translate, notie) {
 
         if (!$rootScope.user) {
-          return $location.path('/admin');
+          return $location.path('/');
         }
 
         $scope.addProject = function () {

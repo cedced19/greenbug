@@ -1,7 +1,7 @@
 module.exports = ['$scope', '$location', '$http', '$rootScope', 'notie', '$translate', function($scope, $location, $http, $rootScope, notie, $translate) {
 
         if ($rootScope.user) {
-            return $location.path('/admin/bugs');
+            return $location.path('/bugs');
         }
 
         $scope.signup = function () {
@@ -9,7 +9,7 @@ module.exports = ['$scope', '$location', '$http', '$rootScope', 'notie', '$trans
                 email: $scope.email,
                 password: $scope.password
             }).success(function() {
-                $location.path('/admin/');
+                $location.path('/');
                 $translate('registrant_created').then(function (translation) {
                   notie.alert(1, translation, 3);
                 });

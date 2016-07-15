@@ -1,7 +1,7 @@
 module.exports = ['$scope', '$location', '$http', '$rootScope', 'notie', '$translate', function($scope, $location, $http, $rootScope, notie, $translate) {
 
         if (!$rootScope.user.admin) {
-          return $location.path('/admin/bugs');
+          return $location.path('/bugs');
         }
 
         $scope.createUser = function() {

@@ -69,5 +69,6 @@
   "project_doesnt_exist": "The project doesn't exist",
   "no_bug": "No shared bug",
   "not_an_image": "You haven't provided a picture.",
-  "bug_shared": "The bug has been shared."
+  "bug_shared": "The bug has been shared.",
+  "no_account_warning": "This website has been created to get bugs from users of in different web applications. If you are not affiliated with this website, please leave it"
 }

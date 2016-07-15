@@ -13,34 +13,30 @@ app.config(['$routeProvider', '$translateProvider', 'localStorageServiceProvider
         // Route configuration
         $routeProvider
         .when('/', {
-            templateUrl: '/views/index.html',
-            controller: 'GreenbugIndexCtrl'
-        })
-        .when('/admin', {
             templateUrl: '/views/login.html',
             controller: 'GreenbugLoginCtrl'
         })
-        .when('/admin/projects/new', {
+        .when('/projects/new', {
             templateUrl: '/views/projects-new.html',
             controller: 'GreenbugProjectsNewCtrl'
         })
-        .when('/admin/bugs', {
+        .when('/bugs', {
             templateUrl: '/views/bugs-list.html',
             controller: 'GreenbugBugsListCtrl'
         })
-        .when('/admin/management', {
+        .when('/management', {
             templateUrl: '/views/management.html',
             controller: 'GreenbugManagementCtrl'
         })
-        .when('/admin/users/new', {
+        .when('/users/new', {
             templateUrl: '/views/users-new.html',
             controller: 'GreenbugUsersNewCtrl'
         })
-        .when('/admin/users/:id', {
+        .when('/users/:id', {
             templateUrl: '/views/users-id.html',
             controller: 'GreenbugUsersIdCtrl'
         })
-        .when('/admin/signup', {
+        .when('/signup', {
             templateUrl: '/views/signup.html',
             controller: 'GreenbugSignupCtrl'
         })
@@ -142,7 +138,6 @@ app.run(['$rootScope', '$location', '$http', '$translate', 'notie', 'localStorag
         }
 }]);
 
-app.controller('GreenbugIndexCtrl', require('./controllers/index.js'));
 app.controller('GreenbugManagementCtrl', require('./controllers/management.js'));
 app.controller('GreenbugUsersIdCtrl', require('./controllers/users-id.js'));
 app.controller('GreenbugUsersNewCtrl', require('./controllers/users-new.js'));
