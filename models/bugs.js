@@ -4,7 +4,7 @@ var randomstring = require('randomstring');
 var Bugs = Waterline.Collection.extend({
     identity: 'bugs',
     connection: 'save',
-    autoCreatedAt: false,
+    autoUpdatedAt: false,
     autoPK: false,
 
     attributes: {

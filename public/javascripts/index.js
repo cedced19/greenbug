@@ -24,6 +24,10 @@ app.config(['$routeProvider', '$translateProvider', 'localStorageServiceProvider
             templateUrl: '/views/bugs-list.html',
             controller: 'GreenbugBugsListCtrl'
         })
+        .when('/bugs/:id', {
+            templateUrl: '/views/bugs-id.html',
+            controller: 'GreenbugBugsIdCtrl'
+        })
         .when('/management', {
             templateUrl: '/views/management.html',
             controller: 'GreenbugManagementCtrl'
@@ -40,13 +44,9 @@ app.config(['$routeProvider', '$translateProvider', 'localStorageServiceProvider
             templateUrl: '/views/signup.html',
             controller: 'GreenbugSignupCtrl'
         })
-        .when('/:project', {
+        .when('/projects/:id', {
             templateUrl: '/views/projects-homepage.html',
             controller: 'GreenbugProjectsHomepageCtrl'
-        })
-        .when('/:project/new', {
-            templateUrl: '/views/bugs-new.html',
-            controller: 'GreenbugBugsNewCtrl'
         })
         .otherwise({
             redirectTo: '/'
@@ -142,7 +142,7 @@ app.controller('GreenbugManagementCtrl', require('./controllers/management.js'))
 app.controller('GreenbugUsersIdCtrl', require('./controllers/users-id.js'));
 app.controller('GreenbugUsersNewCtrl', require('./controllers/users-new.js'));
 app.controller('GreenbugBugsListCtrl', require('./controllers/bugs-list.js'));
-app.controller('GreenbugBugsNewCtrl', require('./controllers/bugs-new.js'));
+app.controller('GreenbugBugsIdCtrl', require('./controllers/bugs-id.js'));
 app.controller('GreenbugProjectsHomepageCtrl', require('./controllers/projects-homepage.js'));
 app.controller('GreenbugProjectsNewCtrl', require('./controllers/projects-new.js'));
 app.controller('GreenbugSignupCtrl', require('./controllers/signup.js'));

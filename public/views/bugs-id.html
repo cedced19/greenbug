@@ -1,0 +1,32 @@
+<h1>{{ 'bug_of' | translate:{title:currentBug.project.title} }}</h1>
+<div ng-hide="editing">
+  <p>
+    <strong>{{ 'sharing_date' | translate }}:</strong> {{ currentBug.createdAt | date:'HH:mm' }} {{ 'date' | translate:{date: currentBug.createdAt} }}
+  </p>
+  <p>
+    <strong>{{ 'description' | translate }}:</strong> {{ currentBug.description }}
+  </p>
+  <p ng-if="currentBug.email">
+    <strong>{{ 'email' | translate }}:</strong> {{ currentBug.email }}
+  </p>
+  <p>
+    <a class="button" ng-click="deleteBug()"><span class="fa fa-trash"></span> {{ 'delete_bug' | translate }}</a>
+    <a class="button" ng-click="editing = true"><span class="fa fa-pencil"></span> {{ 'edit_data' | translate }}</a>
+  </p>
+</div>
+<p ng-if="currentBug.screenshot" ng-hide="editing">
+  <strong>{{ 'screenshot' | translate }}:</strong>
+  <br>
+  <img ng-src="/api/bugs/screenshot/{{ currentBug.id }}" alt="{{ currentBug.description }}" />
+</p>
+<div ng-show="editing">
+  <form name="formEdit">
+    <div class="form-group">
+        <label for="description">{{ 'description' | translate }}:</label>
+        <input id="description" name="description" type="text" class="form-control" ng-model="currentBug.description" placeholder="{{ 'description' | translate }}" required>
+    </div>
+    <div class="form-group">
+        <button ng-disabled="formEdit.$invalid" ng-click="editData()">{{ 'save' | translate }}</button>
+    </div>
+  </form>
+</div>

@@ -5,7 +5,7 @@
   <p>
     {{ project.description }}
   </p>
-  <a ng-href="/#/{{ project.id }}" class="button margin-bottom">{{ 'share_bug' | translate }}</a>
+  <a ng-href="/#/projects/{{ project.id }}" class="button margin-bottom">{{ 'share_bug' | translate }}</a>
   <table ng-show="project.bugs.length">
       <thead>
           <tr>
@@ -14,9 +14,9 @@
           </tr>
       </thead>
       <tbody>
-          <tr ng-repeat="bug in project.bugs | filter:search | orderBy:'updatedAt':true" ng-click="$goPath('/' + project.id + '/' + bug.id)">
+          <tr ng-repeat="bug in project.bugs | filter:search | orderBy:'updatedAt':true" ng-click="$goPath('/bugs/' + bug.id)">
               <td>{{ bug.description }}</td>
-              <td>{{ 'date' | translate:{date:bug.updatedAt} }}</td>
+              <td>{{ 'date' | translate:{date:bug.createdAt} }}</td>
           </tr>
       </tbody>
   </table>

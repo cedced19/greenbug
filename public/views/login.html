@@ -12,7 +12,7 @@
         <input id="password" name="password" ng-model="password" type="password" class="form-control" placeholder="{{ 'password' | translate }}" required>
     </div>
     <div>
-        <i ng-bind-html="'no_account' | translate"></i>
+        <div ng-bind-html="'no_account' | translate" class="no-account"></div>
     </div>
     <div>
         <button ng-disabled="formLogin.$invalid" ng-click="login()">{{ 'login' | translate }}</button>

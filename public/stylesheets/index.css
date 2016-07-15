@@ -503,7 +503,7 @@ select[multiple] {
 label {
 	line-height:2;
   display: inline-block;
-  margin-bottom: 5px;
+  margin-top: 10px;
   font-weight: 700;
 }
 fieldset {
@@ -618,6 +618,11 @@ tfoot td {
 .screenshot-selected {
   color: #2ecc71;
   margin-left: 8px;
+}
+.no-account {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-style: italic;
 }
 .btn-error {
 	color: #c7254e;

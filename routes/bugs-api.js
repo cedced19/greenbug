@@ -67,6 +67,20 @@ router.get('/:id', auth, function(req, res, next) {
     });
 });
 
+/* GET Screenshot of a Bug */
+router.get('/screenshot/:id', auth, function(req, res, next) {
+  req.app.models.bugs.findOne({ id: req.params.id }, function(err, model) {
+    if (err || model === '' || model === null || model === undefined) return next(err);
+    if (!model.path) {
+      err = new Error('No screenshot provided for this bug');
+      err.status = 404;
+      return next(err)
+    }
+    res.setHeader('Content-Type', model.mimetype);
+    res.sendFile(model.path, {root: './screenshots/'});
+  });
+});
+
 /* DELETE Bugs */
 router.delete('/:id', auth, function(req, res, next) {
     req.app.models.bugs.destroy({ id: req.params.id }, function(err) {

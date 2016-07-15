@@ -59,6 +59,7 @@
   "share_bug": "Partager un bug",
   "select_screenshot": "Choisir une capture d'écran",
   "screenshot_selected": "Capture d'écran selectionnée",
+  "screenshot": "Capture d'écran",
   "optional": "optionnel",
   "report_bug_warning": "Ne confondez pas un bug avec un problème concernant seulement vous comme un mot de passe oublié. Dans le doute partagez nous votre expérience.",
   "bug_definition": "Un bug est un dysfonctionnement d'un système informatique. Si vous avez observé ou rencontré un bug sur le site \"{{title}}\", vous pouvez le partager avec nous ici.",
@@ -70,5 +71,7 @@
   "no_bug": "Aucun bug partagé",
   "not_an_image": "Vous n'avez pas donné une image.",
   "bug_shared": "Le bug a été partagé.",
-  "no_account_warning": "Ce site a été créé pour obtenir les bugs des utilisateurs dans différentes application web. Si vous n'êtes pas affilié avec ce site web, s'il vous plait quittez le"
+  "no_account_warning": "Ce site a été créé pour obtenir les bugs des utilisateurs dans différentes application web. Si vous n'êtes pas affilié avec ce site web, s'il vous plait quittez le",
+  "bug_of": "Bug sur \"{{title}}\"",
+  "delete_bug": "Supprimer le bug"
 }
