@@ -73,5 +73,6 @@
   "bug_shared": "Le bug a été partagé.",
   "no_account_warning": "Ce site a été créé pour obtenir les bugs des utilisateurs dans différentes application web. Si vous n'êtes pas affilié avec ce site web, s'il vous plait quittez le",
   "bug_of": "Bug sur \"{{title}}\"",
-  "delete_bug": "Supprimer le bug"
+  "delete_bug": "Supprimer le bug",
+  "bug_deleted": "Le bug vient d'être supprimer."
 }

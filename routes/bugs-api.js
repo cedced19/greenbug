@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 var auth = require('../policies/auth.js');
 var multer = require('multer')({ dest: './screenshots/'});
+var fs = require('fs');
 
 /* GET Bugs */
 router.get('/', auth, function(req, res, next) {
@@ -81,12 +82,27 @@ router.get('/screenshot/:id', auth, function(req, res, next) {
   });
 });
 
-/* DELETE Bugs */
+/* Delete bug function */
+var deleteBug = function (res, req, next) {
+  req.app.models.bugs.destroy({ id: req.params.id }, function(err) {
+      if(err) return next(err);
+      res.json({ status: true });
+  });
+}
+
+/* DELETE Bug */
 router.delete('/:id', auth, function(req, res, next) {
-    req.app.models.bugs.destroy({ id: req.params.id }, function(err) {
-        if(err) return next(err);
-        res.json({ status: true });
-    });
+  req.app.models.bugs.findOne({ id: req.params.id }).exec(function(err, model) {
+    if (err) return next(err);
+    if (model.path) {
+      fs.unlink('./screenshots/' + model.path, function () {
+        if (err) return next(err);
+        deleteBug(res, req, next);
+      });
+    } else {
+      deleteBug(res, req, next);
+    }
+  });
 });
 
 /* PUT Bugs */

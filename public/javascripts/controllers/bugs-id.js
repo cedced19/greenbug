@@ -18,5 +18,14 @@ module.exports = ['$scope', '$location', '$http', '$rootScope', '$routeParams', 
           }).error($rootScope.$error);
         };
 
+        $scope.deleteBug = function () {
+          $http.delete('/api/bugs/' + $routeParams.id).success(function(data) {
+            $translate('bug_deleted').then(function (translation) {
+              notie.alert(1, translation, 3);
+              $location.path('/bugs');
+            });
+          }).error($rootScope.$error);
+        };
+
   }).error($rootScope.$error);
 }];
