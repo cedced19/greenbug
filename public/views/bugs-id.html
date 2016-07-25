@@ -25,6 +25,9 @@
         <label for="description">{{ 'description' | translate }}:</label>
         <input id="description" name="description" type="text" class="form-control" ng-model="currentBug.description" placeholder="{{ 'description' | translate }}" required>
     </div>
+    <p ng-hide="currentBug.labels.length">
+      {{ 'no_label' | translate }}
+    </p>
     <div class="form-group">
         <button ng-disabled="formEdit.$invalid" ng-click="editData()">{{ 'save' | translate }}</button>
     </div>

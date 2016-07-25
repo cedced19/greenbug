@@ -21,6 +21,7 @@ var users = require('./routes/users-api');
 var registrants = require('./routes/registrants-api');
 var bugs = require('./routes/bugs-api');
 var projects = require('./routes/projects-api');
+var labels = require('./routes/labels-api');
 var version = require('./routes/version-api');
 
 var app = express();
@@ -61,6 +62,7 @@ app.use('/api/users', users);
 app.use('/api/registrants', registrants);
 app.use('/api/bugs', bugs);
 app.use('/api/projects', projects);
+app.use('/api/labels', labels);
 app.use('/api/version', version);
 
 // authentication

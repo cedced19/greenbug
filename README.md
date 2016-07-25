@@ -2,7 +2,7 @@
 A web application to get bugs from users of web.
 
 It should be host by the developer of those different web application.  
-The goal is to provide a link to this web appliction which drives the user to this website.  
+The goal is to provide a link to this web application which drives the user to this website.  
 When the user is on this website, he can report the bug he has seen.   
 Now the developer can have a feedback from the users and improve his application.  
 
