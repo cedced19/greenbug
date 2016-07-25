@@ -32,10 +32,6 @@ var Bugs = Waterline.Collection.extend({
             type: 'string',
             email: true
         },
-        labels: {
-          collection: 'labels',
-          via: 'bugs'
-        }
     }
 
 });
