@@ -6,12 +6,14 @@ var Records = Waterline.Collection.extend({
     autoUpdatedAt: false,
 
     attributes: {
-        freeRam: {
-            type: 'number',
-            required: true
+        ram: { // Ex: 2304 MB
+            type: 'float'
         },
-        up: {
-          type: 'boolean'
+        totalRam: { // Ex: 4096 MB
+            type: 'float'
+        },
+        up: { // Optional, the server will check some pages. Ex: true
+            type: 'boolean'
         },
         server: {
             model: 'servers'

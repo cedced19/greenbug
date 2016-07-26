@@ -1,5 +1,6 @@
 var Waterline = require('waterline');
 var hash = require('password-hash-and-salt');
+var randomstring = require('randomstring');
 
 var format = function(server, cb) {
     if (server.token) {

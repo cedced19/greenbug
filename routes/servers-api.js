@@ -1,7 +1,6 @@
 var express = require('express');
 var router = express.Router();
 var auth = require('../policies/auth.js');
-var randomstring = require('randomstring');
 
 /* GET Servers */
 router.get('/', auth, function(req, res, next) {

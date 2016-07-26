@@ -110,4 +110,32 @@ suite('Test models', function () {
             });
         });
     });
+
+    test('should be able to create a server and save a record', function (done) {
+        var Servers = waterline.collections.servers;
+        var Records = waterline.collections.records;
+
+        Servers.create({
+            title: 'Server Paris'
+        })
+        .then(function (server) {
+            assert.equal(server.title, 'Server Paris', 'should have set the title');
+            Records.create({
+                ram: 2304,
+                totalRam: 4096,
+                server: server.id
+            }).then(function(record, err) {
+                console.log(err)
+                assert.equal(record.ram, 2304, 'should have set the ram');
+                assert.equal(record.totalRam, 4096, 'should have set the total ram');
+                Records.find()
+                .populate('server')
+                .exec(function(err, record) {
+                    if (err) throw err;
+                    assert.equal(record[0].server.title, 'Server Paris', 'should have linked to a server');
+                    done();
+                });
+            });
+        });
+    });
 });
