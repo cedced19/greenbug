@@ -28,6 +28,8 @@ suite('Test models', function () {
         waterline.loadCollection(require('../models/registrants.js'));
         waterline.loadCollection(require('../models/bugs.js'));
         waterline.loadCollection(require('../models/projects.js'));
+        waterline.loadCollection(require('../models/servers.js'));
+        waterline.loadCollection(require('../models/records.js'));
         waterline.initialize(config, function  (err, ontology) {
             if (err) {
                 return done(err);
