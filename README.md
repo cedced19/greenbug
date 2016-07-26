@@ -12,7 +12,9 @@ Add some monitoring of your servers will be added. It will required a small soft
 [![Build Status](https://travis-ci.org/cedced19/greenbug.svg)](https://travis-ci.org/cedced19/greenbug)
 [![NPM version](https://badge.fury.io/js/greenbug.svg)](http://badge.fury.io/js/greenbug)
 
-## CLI (soon)
+__The Greenbug server should be run behind a HTTPS proxy.__
+
+## CLI
 
 ```bash
 $ npm install greenbug -g

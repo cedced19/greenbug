@@ -51,11 +51,10 @@ router.post('/', multer.single('screenshot'), function(req, res, next) {
 
 });
 
-/* GET Bugs */
+/* GET Bug */
 router.get('/:id', auth, function(req, res, next) {
-    req.app.models.bugs.find({ id: req.params.id }).populate('project').exec(function(err, model) {
+    req.app.models.bugs.findOne({ id: req.params.id }).populate('project').exec(function(err, model) {
         if (err) return next(err);
-        model = model[0];
         if (model === '' || model === null || model === undefined) return next(err);
         if (model.path) {
           delete model.path;

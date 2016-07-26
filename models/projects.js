@@ -27,6 +27,10 @@ var Projects = Waterline.Collection.extend({
         bugs: {
             collection: 'bugs',
             via: 'project'
+        },
+        servers: {
+            collection: 'servers',
+            via: 'project'
         }
     }
 

@@ -75,5 +75,9 @@
   "bug_of": "Bug sur \"{{title}}\"",
   "delete_bug": "Supprimer le bug",
   "bug_deleted": "Le bug vient d'être supprimer.",
-  "project_created": "Le projet vient d'être créé."
+  "project_created": "Le projet vient d'être créé.",
+  "no_project": "Aucun projet créé. Veuillez en creer un avant d'ajouter un server.",
+  "server_added": "Le serveur vient d'être ajouté. Copiez le token pour pouvoir l'authentifier.",
+  "server_project": "Project auquel appartient ce serveur.",
+  "add_server": "Ajouter un serveur"
 }

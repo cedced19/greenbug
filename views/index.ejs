@@ -37,8 +37,9 @@
     			<div>
     				<ul>
     					<li><a href="#/bugs">{{ 'bugs' | translate }}</a></li>
-    					<li><a href="#/management/" ng-show="user.admin">{{ 'management' | translate }}</a></li>
-    					<li><a href="#/projects/new/" ng-show="user.admin">{{ 'add_project' | translate }}</a></li>
+    					<li><a href="#/management" ng-show="user.admin">{{ 'management' | translate }}</a></li>
+    					<li><a href="#/projects/new">{{ 'add_project' | translate }}</a></li>
+    					<li><a href="#/servers/new">{{ 'add_server' | translate }}</a></li>
               <li><a href="#/users/me">{{ 'my_account' | translate }}</a></li>
               <li><a ng-click="$logout()">{{ 'logout' | translate }}</a></li>
     				</ul>

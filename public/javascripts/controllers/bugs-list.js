@@ -4,7 +4,7 @@ module.exports = ['$scope', '$location', '$http', '$rootScope', function($scope,
           return $location.path('/admin');
         }
 
-        $http.get('/api/projects').success(function (data) {
-                $scope.projects = data;
+        $http.get('/api/projects/bugs').success(function (data) {
+            $scope.projects = data;
         });
 }];

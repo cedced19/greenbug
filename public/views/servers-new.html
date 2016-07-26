@@ -1,0 +1,15 @@
+<h1>{{ 'add_server' | translate }}</h1>
+<form name="formCreate">
+    <div class="form-group">
+        <label for="description">{{ 'title' | translate }}:</label>
+        <input id="description" name="title" type="text" class="form-control" ng-model="title" placeholder="{{ 'title' | translate }}" required>
+    </div>
+    <div class="form-group">
+       <label for="server-project">{{ 'server_project' | translate }}:</label>
+       <select class="form-control" id="server-project" name="server-project"  ng-options="project.title for project in projects" ng-model="project" required>
+       </select>
+   </div>
+    <div class="form-group">
+        <button ng-disabled="formCreate.$invalid" ng-click="addServer()">{{ 'add_server' | translate }}</button>
+    </div>
+</form>

@@ -4,6 +4,14 @@ var auth = require('../policies/auth.js');
 
 /* GET Projects */
 router.get('/', auth, function(req, res, next) {
+    req.app.models.projects.find().exec(function(err, models) {
+        if(err) return next(err);
+        res.json(models);
+    });
+});
+
+/* GET Projects with Bugs */
+router.get('/bugs', auth, function(req, res, next) {
     req.app.models.projects.find().populate('bugs').exec(function(err, models) {
         if(err) return next(err);
         models.forEach(function (project) {
@@ -22,6 +30,20 @@ router.get('/', auth, function(req, res, next) {
     });
 });
 
+/* GET Projects with Servers */
+router.get('/servers', auth, function(req, res, next) {
+    req.app.models.projects.find().populate('servers').exec(function(err, models) {
+        if(err) return next(err);
+        models.forEach(function (project) {
+            project.servers.forEach(function (server) {
+               delete server.project;
+               delete server.token;
+            });
+        });
+        res.json(models);
+    });
+});
+
 /* POST Projects: create a project */
 router.post('/', auth, function(req, res, next) {
     req.app.models.projects.create(req.body, function(err, model) {
@@ -32,9 +54,8 @@ router.post('/', auth, function(req, res, next) {
 
 /* GET Project */
 router.get('/:id', function(req, res, next) {
-    req.app.models.projects.find({ id: req.params.id }).populate('bugs').exec(function(err, model) {
+    req.app.models.projects.findOne({ id: req.params.id }).populate('bugs').exec(function(err, model) {
         if(err) return next(err);
-        model = model[0];
         if(model === '' || model === null || model === undefined) return next(err);
         if (!req.isAuthenticated()) {
           return res.json({

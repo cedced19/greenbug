@@ -21,6 +21,7 @@ var users = require('./routes/users-api');
 var registrants = require('./routes/registrants-api');
 var bugs = require('./routes/bugs-api');
 var projects = require('./routes/projects-api');
+var servers = require('./routes/servers-api');
 var version = require('./routes/version-api');
 
 var app = express();
@@ -50,6 +51,7 @@ app.use(session({
     proxy: false,
     resave: true,
     saveUninitialized: true,
+    httpOnly: true,
     store:  new FileStore({ path: './tmp/sessions', logFn: function () {} })
 }));
 
@@ -61,6 +63,7 @@ app.use('/api/users', users);
 app.use('/api/registrants', registrants);
 app.use('/api/bugs', bugs);
 app.use('/api/projects', projects);
+app.use('/api/servers', servers);
 app.use('/api/version', version);
 
 // authentication
