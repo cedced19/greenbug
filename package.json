@@ -48,6 +48,7 @@
     "cookie-parser": "~1.4.3",
     "debug": "^2.2.0",
     "ejs": "~2.4.2",
+    "env-port": "0.0.0",
     "express": "~4.14.0",
     "express-session": "^1.11.3",
     "helmet": "^2.1.1",
@@ -63,6 +64,7 @@
     "sails-disk": "^0.10.8",
     "semver": "^5.1.0",
     "serve-favicon": "~2.3.0",
+    "server-welcome": "0.0.0",
     "session-file-store": "0.2.0",
     "uglifyify": "^3.0.1",
     "waterline": "^0.12.2"
