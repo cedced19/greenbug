@@ -27,5 +27,10 @@ module.exports = ['$scope', '$location', '$http', '$rootScope', '$routeParams', 
           }).error($rootScope.$error);
         };
 
-  }).error($rootScope.$error);
+  }).error(function() {
+          $translate('bug_doesnt_exist').then(function (translation) {
+            notie.alert(2, translation, 3);
+            $location.path('/');
+          });
+      });
 }];

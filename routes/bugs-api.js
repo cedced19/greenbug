@@ -42,7 +42,7 @@ router.post('/', multer.single('screenshot'), function(req, res, next) {
       data = req.body;
     }
 
-    if (data.email == '')  delete data.email;
+    if (data.email === '')  delete data.email;
 
     req.app.models.bugs.create(data, function(err, model) {
         if(err) return next(err);

@@ -1,4 +1,4 @@
-module.exports = ['$scope', '$location', '$http', '$rootScope', '$translate', 'notie', function($scope, $location, $http, $rootScope, $translate, notie) {
+module.exports = ['$scope', '$location', '$http', '$rootScope', '$routeParams', '$translate', 'notie', function($scope, $location, $http, $rootScope, $routeParams, $translate, notie) {
 
         if (!$rootScope.user) {
           return $location.path('/');
@@ -10,7 +10,7 @@ module.exports = ['$scope', '$location', '$http', '$rootScope', '$translate', 'n
             description: $scope.description
           }).success(function (data) {
             $translate('project_created').then(function (translation) {
-              notie(1, translation, 3);
+              notie.alert(1, translation, 3);
               $location.path('/' + data.id);
             });
           }).error($rootScope.$error);

@@ -89,7 +89,7 @@ app.run(['$rootScope', '$location', '$http', '$translate', 'notie', 'localStorag
 
         $rootScope.$goPath = function (path) { // Change path from view
           $location.path(path);
-        }
+        };
 
         $rootScope.$error = function () { // Send message error
           $http.get('/authenticated').success(function (data) {

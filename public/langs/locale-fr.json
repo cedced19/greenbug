@@ -68,6 +68,7 @@
   "sharing_date": "Date de partage",
   "add_project": "Ajouter un projet",
   "project_doesnt_exist": "Le projet n'existe pas",
+  "bug_doesnt_exist": "Le bug n'existe pas",
   "no_bug": "Aucun bug partagé",
   "not_an_image": "Vous n'avez pas donné une image.",
   "bug_shared": "Le bug a été partagé.",

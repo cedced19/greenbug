@@ -55,6 +55,8 @@ app.use(session({
     store:  new FileStore({ path: './tmp/sessions', logFn: function () {} })
 }));
 
+app.set('jwt secret', '0000000F00000003');
+
 app.use(passport.initialize());
 app.use(passport.session());
 

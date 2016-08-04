@@ -1,12 +1,11 @@
 var Waterline = require('waterline');
 var hash = require('password-hash-and-salt');
-var randomstring = require('randomstring');
 
 var format = function(server, cb) {
-    if (server.token) {
-        hash(server.token).hash(function(err, crypted) {
+    if (server.password) {
+        hash(server.password).hash(function(err, crypted) {
           if (err) return cb(err);
-          server.token = crypted;
+          server.password = crypted;
           cb();
         });
     } else {
@@ -30,18 +29,17 @@ var Servers = Waterline.Collection.extend({
             collection: 'records',
             via: 'server'
         },
-        token: {
+        password: {
           type: 'string',
-          required: true,
-          defaultsTo: function () {
-              return randomstring.generate(64);
-          }
+          required: true
         },
         project: {
             model: 'projects'
         }
-    }
-
+    },
+    
+    beforeCreate: format,
+    beforeUpdate: format
 });
 
 module.exports = Servers;
