@@ -116,10 +116,12 @@ suite('Test models', function () {
         var Records = waterline.collections.records;
 
         Servers.create({
-            title: 'Server Paris'
+            title: 'Server Paris',
+            password: 'XEZmHN2ULXmj9uuJpEYxihfClzVt66j3R3ULoHDODsxGX6KMlx5t4ionBmkK'
         })
         .then(function (server) {
             assert.equal(server.title, 'Server Paris', 'should have set the title');
+            assert.notEqual(server.password, 'XEZmHN2ULXmj9uuJpEYxihfClzVt66j3R3ULoHDODsxGX6KMlx5t4ionBmkK', 'should have hash the password');
             Records.create({
                 ram: 2304,
                 totalRam: 4096,
