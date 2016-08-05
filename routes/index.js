@@ -61,4 +61,8 @@ router.get('/logout', function(req, res) {
     res.redirect('/');
 });
 
+router.get('/up', function(req, res) { // check if the server is up with a light answer
+    req.json({ status: true });
+});
+
 module.exports = router;
