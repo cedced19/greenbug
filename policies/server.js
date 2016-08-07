@@ -11,7 +11,7 @@ module.exports = function (req, res, next) {
         err.status = 401;
         return next(err);
       }
-      req.server = decoded.iss; 
+      req.server = decoded.iss;
       next();
     } catch (err) {
       err.mesage = 'Access token isn\'t valid.';
