@@ -10,7 +10,7 @@ router.get('/', auth, function(req, res, next) {
     req.app.models.servers.find().exec(function(err, models) {
         if(err) return next(err);
         models.forEach(function(model){
-            delete model.token;
+            delete model.password;
         });
         res.json(models);
     });
@@ -26,7 +26,6 @@ router.post('/', auth, function(req, res, next) {
         if(err) return next(err);
         res.json({
           title: model.title,
-          password: password,
           id: model.id
         });
     });
@@ -37,6 +36,7 @@ router.get('/:id', auth, function(req, res, next) {
     req.app.models.servers.findOne({ id: req.params.id }, function(err, model) {
         if(err) return next(err);
         if(model === '' || model === null || model === undefined) return next(err);
+        delete model.password;
         res.json(model);
     });
 });

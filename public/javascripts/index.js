@@ -20,6 +20,10 @@ app.config(['$routeProvider', '$translateProvider', 'localStorageServiceProvider
             templateUrl: '/views/projects-new.html',
             controller: 'GreenbugProjectsNewCtrl'
         })
+        .when('/servers', {
+            templateUrl: '/views/servers-list.html',
+            controller: 'GreenbugServersListCtrl'
+        })
         .when('/servers/new', {
             templateUrl: '/views/servers-new.html',
             controller: 'GreenbugServersNewCtrl'
@@ -150,5 +154,6 @@ app.controller('GreenbugBugsIdCtrl', require('./controllers/bugs-id.js'));
 app.controller('GreenbugProjectsHomepageCtrl', require('./controllers/projects-homepage.js'));
 app.controller('GreenbugProjectsNewCtrl', require('./controllers/projects-new.js'));
 app.controller('GreenbugServersNewCtrl', require('./controllers/servers-new.js'));
+app.controller('GreenbugServersListCtrl', require('./controllers/servers-list.js'));
 app.controller('GreenbugSignupCtrl', require('./controllers/signup.js'));
 app.controller('GreenbugLoginCtrl', require('./controllers/login.js'));

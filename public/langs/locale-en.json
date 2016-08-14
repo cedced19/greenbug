@@ -80,5 +80,7 @@
   "no_project": "No project created. Please create one before add a server.",
   "server_added": "The project has just been added. Paste the token to authenticate it to the Greenbug server.",
   "server_project": "Project which belongs this server.",
+  "servers": "Servers",
+  "no_server": "No server saved",
   "add_server": "Add a server"
 }

@@ -957,3 +957,9 @@ h1 {
 .checkbox:checked + label:before {
   background: #222;
 }
+.item-container {
+	border: 1px solid rgba(0,0,0,.12);
+	margin-top: 10px;
+  margin-bottom: 10px;
+  padding-left: 5px;
+}

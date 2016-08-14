@@ -1,6 +1,6 @@
 <h1>{{ 'bugs' | translate }}</h1>
 <input ng-model="search" type="text" placeholder="{{ 'search' | translate }}" class="search">
-<div ng-repeat="project in projects">
+<div ng-repeat="project in projects" class="item-container">
   <h3>{{ project.title }}</h3>
   <p>
     {{ project.description }}

@@ -80,5 +80,7 @@
   "no_project": "Aucun projet créé. Veuillez en creer un avant d'ajouter un server.",
   "server_added": "Le serveur vient d'être ajouté. Copiez le token pour pouvoir l'authentifier.",
   "server_project": "Project auquel appartient ce serveur.",
+  "servers": "Serveurs",
+  "no_server": "Aucun server enregistré",
   "add_server": "Ajouter un serveur"
 }
