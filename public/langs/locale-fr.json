@@ -82,5 +82,10 @@
   "server_project": "Project auquel appartient ce serveur.",
   "servers": "Serveurs",
   "no_server": "Aucun server enregistré",
-  "add_server": "Ajouter un serveur"
+  "add_server": "Ajouter un serveur",
+  "free_memory": "Mémoire libre",
+  "used_memory": "Mémoire utilisé",
+  "as_percentage": "en pourcentage",
+  "up_last_day": "Temps de disponiblité au cours du dernier jour",
+  "memory_last_day": "Mémoire au cours du dernier jour"
 }

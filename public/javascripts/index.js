@@ -7,9 +7,10 @@ require('angular-translate-loader-static-files');
 require('angular-translate-loader-url');
 require('ng-file-upload');
 require('angular-local-storage');
+require('angular-chart.js');
 
-var app = angular.module('Greenbug', ['ngNotie', 'ngSanitize', 'ngRoute', 'pascalprecht.translate', 'ngFileUpload', 'LocalStorageModule']);
-app.config(['$routeProvider', '$translateProvider', 'localStorageServiceProvider',  function($routeProvider, $translateProvider, localStorageServiceProvider) {
+var app = angular.module('Greenbug', ['ngNotie', 'ngSanitize', 'ngRoute', 'pascalprecht.translate', 'ngFileUpload', 'LocalStorageModule', 'chart.js']);
+app.config(['$routeProvider', '$translateProvider', 'localStorageServiceProvider', 'ChartJsProvider', function($routeProvider, $translateProvider, localStorageServiceProvider, ChartJsProvider) {
         // Route configuration
         $routeProvider
         .when('/', {
@@ -23,6 +24,10 @@ app.config(['$routeProvider', '$translateProvider', 'localStorageServiceProvider
         .when('/servers', {
             templateUrl: '/views/servers-list.html',
             controller: 'GreenbugServersListCtrl'
+        })
+        .when('/servers/:id', {
+            templateUrl: '/views/servers-id.html',
+            controller: 'GreenbugServersIdCtrl'
         })
         .when('/servers/new', {
             templateUrl: '/views/servers-new.html',
@@ -77,6 +82,7 @@ app.config(['$routeProvider', '$translateProvider', 'localStorageServiceProvider
         .useSanitizeValueStrategy(null)
         .determinePreferredLanguage()
         .fallbackLanguage('en');
+
 }]);
 app.run(['$rootScope', '$location', '$http', '$translate', 'notie', 'localStorageService', function ($rootScope, $location, $http, $translate, notie, localStorageService) {
 
@@ -155,5 +161,6 @@ app.controller('GreenbugProjectsHomepageCtrl', require('./controllers/projects-h
 app.controller('GreenbugProjectsNewCtrl', require('./controllers/projects-new.js'));
 app.controller('GreenbugServersNewCtrl', require('./controllers/servers-new.js'));
 app.controller('GreenbugServersListCtrl', require('./controllers/servers-list.js'));
+app.controller('GreenbugServersIdCtrl', require('./controllers/servers-id.js'));
 app.controller('GreenbugSignupCtrl', require('./controllers/signup.js'));
 app.controller('GreenbugLoginCtrl', require('./controllers/login.js'));

@@ -33,10 +33,13 @@ router.post('/', auth, function(req, res, next) {
 
 /* GET Server */
 router.get('/:id', auth, function(req, res, next) {
-    req.app.models.servers.findOne({ id: req.params.id }, function(err, model) {
+    req.app.models.servers.findOne({ id: req.params.id }).populate('records', {limit: 100}).exec(function(err, model) {
         if(err) return next(err);
         if(model === '' || model === null || model === undefined) return next(err);
         delete model.password;
+        model.records.forEach(function(record){
+            delete record.server;
+        });
         res.json(model);
     });
 });

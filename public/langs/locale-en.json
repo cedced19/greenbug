@@ -82,5 +82,10 @@
   "server_project": "Project which belongs this server.",
   "servers": "Servers",
   "no_server": "No server saved",
-  "add_server": "Add a server"
+  "add_server": "Add a server",
+  "free_memory": "Free memory",
+  "used_memory": "Used memory",
+  "as_percentage": "as a percentage",
+  "up_last_day": "Time of availability over the last day",
+  "memory_last_day": "Memory over the last day"
 }

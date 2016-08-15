@@ -33,6 +33,7 @@
   },
   "dependencies": {
     "angular": "^1.4.5",
+    "angular-chart.js": "^1.0.0",
     "angular-local-storage": "^0.2.7",
     "angular-route": "^1.4.5",
     "angular-sanitize": "^1.4.5",
