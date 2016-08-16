@@ -87,5 +87,15 @@
   "used_memory": "Used memory",
   "as_percentage": "as a percentage",
   "up_last_day": "Time of availability over the last day",
-  "memory_last_day": "Memory over the last day"
+  "memory_last_day": "Memory over the last day",
+  "last_starts": "Last starts",
+  "last_restart": "Last restart",
+  "average_uptime": "Average uptime of the server",
+  "day": "day",
+  "hour": "hour",
+  "minute": "minute",
+  "second": "second",
+  "days": "days",
+  "hours": "hours",
+  "minutes": "minutes"
 }

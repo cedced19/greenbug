@@ -87,5 +87,14 @@
   "used_memory": "Mémoire utilisé",
   "as_percentage": "en pourcentage",
   "up_last_day": "Temps de disponiblité au cours du dernier jour",
-  "memory_last_day": "Mémoire au cours du dernier jour"
+  "memory_last_day": "Mémoire au cours du dernier jour",
+  "last_starts": "Derniers démarrages",
+  "last_restart": "Dernier redémarrage",
+  "average_uptime": "Temps moyen au cours duquel le serveur est allumé",
+  "day": "jour",
+  "hour": "heure",
+  "minute": "minute",
+  "days": "jours",
+  "hours": "heures",
+  "minutes": "minutes"
 }

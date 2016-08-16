@@ -19,13 +19,13 @@ module.exports = ['$scope', '$location', '$http', '$rootScope', '$routeParams', 
             data: [],
             labels: [],
             options: {
-                scales: {
-                  yAxes: [
-                    {
-                      display: false
-                    }
-                  ]
-                }
+              scales: {
+                yAxes: [
+                  {
+                    display: false
+                  }
+                ]
+              }
             }
           };
           data.records.forEach(function (value, index) {
@@ -47,6 +47,29 @@ module.exports = ['$scope', '$location', '$http', '$rootScope', '$routeParams', 
             $scope.chartMem.labels.push(translations['free_memory'] + ' ' + translations['as_percentage']);
             $scope.chartMem.labels.push(translations['used_memory'] + ' ' + translations['as_percentage']);
           });
+
+          // Calculate the last restart
+          var lastRecord = data.records[data.records.length-1];
+          $scope.lastRestart = $filter('date')(new Date(new Date(lastRecord.createdAt).getTime() - lastRecord.serverUptime*1000), 'dd/MM HH:mm');
+
+          // Calculate the average uptime
+          var averageUptime = average(data.records.map(function (value) {
+            return value.serverUptime;
+          }));
+          $translate(['day', 'hour', 'minute', 'days', 'hours', 'minutes']).then(function (translations) {
+            var d = Math.floor(averageUptime/86400);
+            $scope.averageUptime = d + ' ' + translations['day'+(d>1?'s' : '')];
+            averageUptime -= d*86400;
+
+            var h = Math.floor(averageUptime/3600);
+            $scope.averageUptime += ' ' + h + ' ' + translations['hour'+(h>1?'s' : '')];
+            averageUptime -= h*3600;
+
+            var m = Math.floor(averageUptime/60);
+            $scope.averageUptime += ' ' + m + ' ' + translations['minute'+(m>1?'s' : '')];
+            averageUptime -= m*60;
+          });
+
         }).error($rootScope.$error);
 
 }];

@@ -10,7 +10,7 @@ require('angular-local-storage');
 require('angular-chart.js');
 
 var app = angular.module('Greenbug', ['ngNotie', 'ngSanitize', 'ngRoute', 'pascalprecht.translate', 'ngFileUpload', 'LocalStorageModule', 'chart.js']);
-app.config(['$routeProvider', '$translateProvider', 'localStorageServiceProvider', 'ChartJsProvider', function($routeProvider, $translateProvider, localStorageServiceProvider, ChartJsProvider) {
+app.config(['$routeProvider', '$translateProvider', 'localStorageServiceProvider', function($routeProvider, $translateProvider, localStorageServiceProvider) {
         // Route configuration
         $routeProvider
         .when('/', {
