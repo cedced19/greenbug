@@ -13,6 +13,11 @@ module.exports = ['$scope', '$location', '$http', '$rootScope', '$routeParams', 
         };
 
         $http.get('/api/servers/' + $routeParams.id).success(function (data) {
+          $scope.server = {
+            id: data.id,
+            title: data.title
+          };
+
           // Create a chart to show when server is up
           $scope.chartUp = {
             series: [data.title],
@@ -29,6 +34,7 @@ module.exports = ['$scope', '$location', '$http', '$rootScope', '$routeParams', 
             }
           };
           data.records.forEach(function (value, index) {
+            if (value.up) { value.up = 1 } else { value.up = 0 }
             $scope.chartUp.data.push(value.up);
             $scope.chartUp.labels.push($filter('date')(value.createdAt, 'dd/MM HH:mm'));
           });

@@ -96,5 +96,6 @@
   "minute": "minute",
   "days": "jours",
   "hours": "heures",
-  "minutes": "minutes"
+  "minutes": "minutes",
+  "server": "Serveur"
 }
