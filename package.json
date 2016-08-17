@@ -1,7 +1,7 @@
 {
   "name": "greenbug",
   "version": "0.0.0",
-  "description": "A web application to store the office file templates.",
+  "description": "A web application to get bugs from users of web applications.",
   "keywords": [
     "cli",
     "web",

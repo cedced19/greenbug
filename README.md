@@ -1,13 +1,13 @@
 # greenbug
-A web application to get bugs from users of web.
+A web application to get bugs from users of web applications.
 
-It should be host by the developer of those different web applications.  
-The goal is to provide a link to those different web applications which drives the user to this website.  
+It should be host by the developer of those different web applications.   
+The goal is to provide a link to those different web applications which drives the user to this website.   
 When the user is on this website, he can report the bug he has seen.   
-Now the developer can have a feedback from the users and improve his application.  
+Now the developer can have a feedback from the users and improve his application.    
+With Greenbug you can do some monitoring. It requires [greenbug-monitoring](https://githug.com/cedced19/greenbug-monitoring) on your servers to send informations to Greenbug.
 
-__TODO:__  
-Add some monitoring of your servers will be added. It will required a small software on your servers to send informations to Greenbug.
+![Demo](demo.png)
 
 [![Build Status](https://travis-ci.org/cedced19/greenbug.svg)](https://travis-ci.org/cedced19/greenbug)
 [![NPM version](https://badge.fury.io/js/greenbug.svg)](http://badge.fury.io/js/greenbug)
@@ -37,7 +37,7 @@ $ npm start --production
 
 ## API
 
-There are Rest API on:
+There are Rest APIs on:
 * `http://localhost:8881/api/bugs/` for bugs
 * `http://localhost:8881/api/projects/` for projects
 * `http://localhost:8881/api/users/` for users

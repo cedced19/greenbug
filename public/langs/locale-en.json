@@ -98,5 +98,6 @@
   "days": "days",
   "hours": "hours",
   "minutes": "minutes",
-  "server": "Server"
+  "server": "Server",
+  "authentication_informations": "Authentication informations"
 }

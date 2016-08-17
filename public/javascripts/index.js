@@ -25,13 +25,13 @@ app.config(['$routeProvider', '$translateProvider', 'localStorageServiceProvider
             templateUrl: '/views/servers-list.html',
             controller: 'GreenbugServersListCtrl'
         })
-        .when('/servers/:id', {
-            templateUrl: '/views/servers-id.html',
-            controller: 'GreenbugServersIdCtrl'
-        })
         .when('/servers/new', {
             templateUrl: '/views/servers-new.html',
             controller: 'GreenbugServersNewCtrl'
+        })
+        .when('/servers/:id', {
+            templateUrl: '/views/servers-id.html',
+            controller: 'GreenbugServersIdCtrl'
         })
         .when('/bugs', {
             templateUrl: '/views/bugs-list.html',

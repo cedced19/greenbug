@@ -21,12 +21,14 @@ router.post('/', auth, function(req, res, next) {
     var password = randomstring.generate(64);
     req.app.models.servers.create({
       title: req.body.title,
-      password: password
+      password: password,
+      project: req.body.project
     }, function(err, model) {
         if(err) return next(err);
         res.json({
           title: model.title,
-          id: model.id
+          id: model.id,
+          password: password
         });
     });
 });

@@ -18,11 +18,11 @@ module.exports = ['$scope', '$location', '$http', '$rootScope', '$translate', 'n
           $scope.addServer = function () {
             $http.post('/api/servers', {
               title: $scope.title,
-              project: $scope.project
+              project: $scope.project.id
             }).success(function (data) {
               $translate('server_added').then(function (translation) {
-                notie(1, translation, 3);
-                $location.path('/servers/' + data.id).search({title: data.title, token: data.token });
+                notie.alert(1, translation, 3);
+                $location.path('/servers/' + data.id).search({password: data.password });
               });
             }).error($rootScope.$error);
           };

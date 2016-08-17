@@ -1,18 +1,29 @@
 <h1>{{ 'server' | translate }} n° {{ server.id }}: "{{ server.title }}"</h1>
 
-<div class="item-container">
+<div class="item-container" ng-show="auth">
+  <h3 translate="authentication_informations"></h3>
+<pre>
+{
+  "id": {{ auth.id }},
+  "url": "{{ auth.url }}",
+  "password": "{{ auth.password }}"
+}
+</pre>
+</div>
+
+<div class="item-container" ng-show="server.records">
   <h3 translate="up_last_day"></h3>
   <canvas id="line" class="chart chart-line" chart-data="chartUp.data" chart-labels="chartUp.labels" chart-series="chartUp.series" chart-options="chartUp.options">
   </canvas>
 </div>
 
-<div class="item-container">
+<div class="item-container" ng-show="server.records">
   <h3 translate="memory_last_day"></h3>
   <canvas id="doughnut" class="chart chart-doughnut" chart-data="chartMem.data" chart-labels="chartMem.labels">
   </canvas>
 </div>
 
-<div class="item-container">
+<div class="item-container" ng-show="server.records">
   <h3 translate="last_starts"></h3>
   <p>
     <b translate="last_restart"></b>: {{ lastRestart }}
