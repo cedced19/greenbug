@@ -5,7 +5,7 @@ It should be host by the developer of those different web applications.
 The goal is to provide a link to those different web applications which drives the user to this website.   
 When the user is on this website, he can report the bug he has seen.   
 Now the developer can have a feedback from the users and improve his application.    
-With Greenbug you can do some monitoring. It requires [greenbug-monitoring](https://githug.com/cedced19/greenbug-monitoring) on your servers to send informations to Greenbug.
+With Greenbug you can do some monitoring. It requires [greenbug-monitoring](https://github.com/cedced19/greenbug-monitoring) on your servers to send informations to Greenbug.
 
 ![Demo](demo.png)
 
